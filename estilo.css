@@ -568,12 +568,12 @@ body {
   }
 
   .additional-image-container img {
-    max-width: 100%;
+    max-width: 80%;
     height: auto;
   }
 
   .Alvus-personaje {
-    width: 100%;
+    width: 150%;
     margin: 0 auto;
     text-align: center;
   }
@@ -581,6 +581,7 @@ body {
   .Alvus-personaje img {
     width: 100%;
     height: auto;
+    margin-left: -7rem;
   }
 
   .Ilustracion-digital-contenedor {
@@ -2040,24 +2041,26 @@ input[type="checkbox"] {
   /* Ajustar la estructura del contenedor de contacto */
   .contenedor-contacto {
     flex-direction: column;
-    width: 100%;
-    margin: 0 auto; /* Centrar el contenedor */
+    width: 95%;
+    margin: 0 auto;
     padding: 0;
+    overflow-x: hidden; /* Prevenir desbordamiento horizontal */
   }
 
   /* Ajustar la información de contacto */
   .info-contacto {
     width: 100%;
-    padding: 50px;
-    text-align: left; /* Alinear texto a la izquierda */
+    padding: 40px 20px; /* Reducir padding para mejorar visualización */
+    text-align: left;
     position: relative;
-    margin: 0 auto; /* Centrar mejor el contenedor */
+    margin: 0 auto;
   }
 
   .info-contacto h3 {
     font-size: 16px;
     margin-bottom: 1rem;
-    margin-left: -2rem;
+    margin-left: 0; /* Eliminar el margen negativo */
+    text-align: left; /* Asegurar que el texto esté alineado */
   }
 
   /* Alinear el texto de contacto a la izquierda */
@@ -2068,25 +2071,25 @@ input[type="checkbox"] {
 
   .contacto-izquierda p {
     font-size: 14px;
-    margin-bottom: 0.5rem; /* Ajustar márgenes para más espacio */
+    margin-bottom: 0.5rem;
   }
 
-  /* Mantener la imagen pegada a la derecha */
+  /* Ajustar la imagen de contacto */
   .imagen-contacto {
-    width: 120px; /* Tamaño adecuado para móviles */
+    width: 100px; /* Tamaño adecuado para móviles */
     height: auto;
     position: absolute;
     top: 10px;
-    right: 0px; /* Pegada a la derecha */
-    transform: translateY(0); /* Eliminar el centrado vertical para evitar desplazamiento extraño */
+    right: 10px; /* Asegura espacio a la derecha */
+    transform: translateY(0);
   }
 
-  /* Ajustar los círculos decorativos para que no interfieran en pantallas pequeñas */
+  /* Ocultar los círculos decorativos */
   .circulos-decorativos .circulo {
-    display: none; /* Ocultar círculos en pantallas pequeñas */
+    display: none;
   }
 
-  /* Ajustar iconos de redes a la derecha */
+  /* Ajustar iconos de redes */
   .iconos-redes {
     position: absolute;
     bottom: 10px;
@@ -2114,9 +2117,10 @@ input[type="checkbox"] {
   .boton-enviar {
     padding: 12px;
     font-size: 14px;
-    width: 100%; /* Botón a lo ancho para pantallas pequeñas */
+    width: 100%;
   }
 }
+
 
 /*APARTADO DEL CURSO COMO TAL*/
 
