@@ -1164,7 +1164,7 @@ input[type="checkbox"] {
   color: black;
   margin-top: 1rem;
   font-size: 18px;
-  line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+  line-height: 1.6; /* Ajusta la altura de línea para mejorar la legibilidad */
 }
 
 .introduccion-texto-2 {
