@@ -368,104 +368,6 @@ body {
 
 /*RESPONSIVE INDEX*/
 
-@media only screen and (max-width: 480px) {
-  /* Elimina el contenedor de la imagen en pantallas de 480px o menos */
-  .left-image-container {
-      display: none; /* Oculta completamente el contenedor de la imagen */
-  }
-
-}
-
-/* Estilos para móviles (pantallas menores a 768px) */
-@media only screen and (max-width: 767px) {
-  .Contenedor-HOME {
-      padding: 20px;
-      overflow: visible;
-  }
-
-  .CONTENIDO-HOME {
-      display: block; /* Mantiene el formato vertical */
-      text-align: center; /* Alinea el contenido al centro */
-      padding: 0 10px;
-  }
-
-  .texto-contenido-home {
-      margin: 2rem auto;
-      padding: 0 15px;
-      margin-top: 5rem; /* Ajuste para evitar superposición */
-  }
-
-  .texto-contenido-home h1 {
-      font-size: 28px; /* Ajusta el tamaño del título */
-  }
-
-  /* Mueve la imagen del personaje Alvus debajo del texto */
-  .Alvus-personaje {
-    text-align: center;
-    margin: 2rem auto;
-    width: 140%;
-    order: 1;
-    position: relative;
-  }
-
-  .Alvus-personaje img {
-    width: 140%;
-    height: auto;
-    transform: translateX(-14.5%);
-    left: 0;
-    top: 0;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
-  }
-
-  /* La imagen del cielo estrellado debajo del personaje */
-  .additional-image-container {
-      margin: 2rem auto;
-      width: 100%; /* Asegura que la imagen ocupe todo el ancho */
-      text-align: center;
-      padding: 0;
-  }
-
-  .additional-image-container img {
-      max-width: 100%; /* Imagen al 100% del ancho */
-      padding-top: 1rem;
-  }
-
-  /* La imagen del apartado left-image-container debajo del texto */
-  .left-image-container {
-      float: none; /* Elimina el float */
-      margin: 10rem 0;
-      text-align: center; /* Centra la imagen */
-      transform: none; /* Elimina la rotación */
-      order: 2; /* Asegura que esté debajo del texto */
-  }
-
-  .left-image-container img {
-      max-width: 100%; /* Ajusta la imagen al 80% del ancho */
-      height: auto;
-  }
-
-  .Ilustracion-digital-contenedor {
-      margin-top: 2rem;
-      margin-bottom: 5rem;
-      padding: 20px;
-      text-align: center; /* Centra el texto */
-  }
-
-  .Ilustracion-digital-contenedor h2 {
-      margin: 0 auto;
-      font-size: 24px; /* Ajusta el tamaño del título */
-      text-align: center;
-  }
-
-  .Ilustracion-digital-contenedor p {
-      font-size: 16px;
-      margin: 0 auto;
-      text-align: left; /* Justifica el texto */
-  }
-
-}
 
 /* Estilos para pantallas de 768px a 1024px (tabletas) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -541,6 +443,193 @@ body {
 
   .Ilustracion-digital-contenedor p {
       font-size: 18px;
+  }
+}
+
+/* Estilos para pantallas de hasta 767px */
+@media only screen and (max-width: 767px) {
+  .Contenedor-HOME {
+    padding: 20px;
+    overflow: visible;
+  }
+
+  .CONTENIDO-HOME {
+    display: block; /* Mantiene el formato vertical */
+    text-align: center; /* Alinea el contenido al centro */
+    padding: 0 10px;
+  }
+
+  .texto-contenido-home {
+    margin: 2rem auto;
+    padding: 0 15px;
+    margin-top: 5rem; /* Ajuste para evitar superposición */
+  }
+
+  .texto-contenido-home h1 {
+    font-size: 28px; /* Ajusta el tamaño del título */
+  }
+
+  /* Ajustes para el personaje Alvus */
+  .Alvus-personaje {
+    text-align: center;
+    margin: 2rem auto;
+    width: 100%;
+    order: 1;
+    position: relative;
+  }
+
+  .Alvus-personaje img {
+    width: 100%;
+    height: auto;
+    transform: none; /* Elimina cualquier transformación */
+    left: 0;
+    top: 0;
+    position: relative;
+    -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  }
+
+  /* Imagen del cielo estrellado */
+  .additional-image-container {
+    margin: 2rem auto;
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho */
+    text-align: center;
+    padding: 0;
+  }
+
+  .additional-image-container img {
+    max-width: 100%; /* Imagen al 100% del ancho */
+    padding-top: 1rem;
+  }
+
+  /* Ajuste de la Ilustración Digital */
+  .Ilustracion-digital-contenedor {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding: 20px;
+    text-align: center; /* Centra el texto */
+  }
+
+  .Ilustracion-digital-contenedor h2 {
+    margin: 0 auto;
+    font-size: 24px; /* Ajusta el tamaño del título */
+    text-align: center;
+  }
+
+  .Ilustracion-digital-contenedor p {
+    font-size: 16px;
+    margin: 0 auto;
+    text-align: left; /* Justifica el texto */
+  }
+
+  /* Ajustes del slider */
+  .collection .content {
+    width: 90%; /* Limita el ancho del slider */
+    margin: 0 auto; /* Centra el slider */
+  }
+
+  .textos-slider p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Estilos para pantallas de hasta 480px */
+@media only screen and (max-width: 480px) {
+  /* Oculta el contenedor de la imagen left-image-container */
+  .left-image-container {
+    display: none;
+  }
+
+  .Contenedor-HOME {
+    padding: 0 1rem;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    margin-top: 1rem;
+  }
+
+  .CONTENIDO-HOME {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .texto-contenido-home {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .texto-contenido-home h1 {
+    font-size: 1.5rem;
+  }
+
+  .additional-image-container {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .additional-image-container img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .Alvus-personaje {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .Alvus-personaje img {
+    width: 100%;
+    height: auto;
+  }
+
+  .Ilustracion-digital-contenedor {
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .Ilustracion-digital-contenedor h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .Ilustracion-digital-contenedor p {
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  .titulo-galeria h1{
+    font-size: 2.1rem;
+    margin-bottom: -5rem;
+  }
+
+  /* Ajustes del slider para evitar desplazamiento horizontal */
+  .collection .content {
+    width: 90%; /* Ajusta el ancho al 90% */
+    margin: 1rem auto; /* Centra el slider */
+  }
+
+  #lightbox img {
+    max-width: 85%; /* Reduce el tamaño para evitar desbordamientos */
+    margin: 0 auto;
+  }
+
+  .textos-slider h3 {
+    font-size: 1.5rem;
+  }
+
+  .textos-slider p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  [data-aos="fade-left"],
+  [data-aos="fade-right"] {
+    transform: none !important; /* Desactiva el efecto en esas resoluciones */
+    opacity: 1 !important;
   }
 }
 
@@ -1367,6 +1456,18 @@ input[type="checkbox"] {
     padding: 10px;
   }
 
+  .titulo-principal-curso h1{
+    font-size: 30px;
+  }
+
+  .titulo-principal-curso p{
+    font-size: 18px;
+  }
+
+  .video-placeholder{
+    width: 350px;
+  }
+
   .introduccion-texto-1,
   .introduccion-texto-2{
     width: 100%;
@@ -1377,7 +1478,11 @@ input[type="checkbox"] {
   }
 
   .introduccion-texto-1{
-    margin-bottom: 24rem;
+    margin-bottom: 27rem;
+  }
+
+  .introduccion-texto-1 p{
+    margin-bottom: 8rem;
   }
 
   .introduccion-texto-3 {
@@ -1391,8 +1496,8 @@ input[type="checkbox"] {
   .introduccion-texto-1 h2,
   .introduccion-texto-2 h2,
   .introduccion-texto-3 h2 {
-    font-size: 1.8rem; /* Ajusta el tamaño del encabezado */
-    margin-top: 1rem;
+    font-size: 1.6rem; /* Ajusta el tamaño del encabezado */
+    margin-top: 2rem;
   }
 
   .video-grid {
@@ -1425,6 +1530,7 @@ input[type="checkbox"] {
   .contenidos-estructurados {
     padding: 10px;
     margin: 10px 0;
+    margin-top: 1.5rem;
   }
 
   .unidad ul {
