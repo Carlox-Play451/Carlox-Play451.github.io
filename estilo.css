@@ -2169,6 +2169,56 @@ input[type="checkbox"] {
 
 .Unidad-temas h3{
   margin-top: 2rem;
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.Unidad-temas p{
+  line-height: 2.3rem;
+  font-size: 17px;
+}
+
+.Unidad-temas li{
+  font-size: 20px;
+  margin-left: 15px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.imagenes-de-unidades {
+  display: flex; /* Usar flexbox para alinear las imágenes */
+  gap: 10px; /* Espacio entre las imágenes */
+  margin-top: 2rem; /* Espacio superior para separar las imágenes del texto */
+  margin-bottom: 1rem;
+}
+
+.imagenes-de-unidades img {
+  width: 50%; /* Ajusta el tamaño según sea necesario */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.imagen-unidad-apartado{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Cuatro columnas */
+  gap: 5px; /* Espacio entre las imágenes */
+  padding: 30px;
+  margin-left: -1.5rem;
+}
+
+.imagenes-unidades{
+  width: 400px;
+  height: 280px; /* Puedes ajustar la altura de cada contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Color de fondo para mejor visibilidad */
+}
+
+.imagenes-unidades img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionar */
 }
 
 /*RECURSOS ADICIONALES*/
