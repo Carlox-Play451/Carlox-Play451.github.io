@@ -2159,13 +2159,7 @@ input[type="checkbox"] {
   margin-bottom: 20px;
 }
 
-.curso-description {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #444;
-}
-
-/*STEMAS DEL CURSO*/
+/*TEMAS DEL CURSO*/
 
 .Unidad-temas h3{
   margin-top: 2rem;
@@ -2315,7 +2309,7 @@ input[type="checkbox"] {
   line-height: 35px;
   margin-right: 10px;
   font-weight: bold;
-  color: #555;
+  color: #2c2c2c;
 }
 
 /*BOTONES DE REDIRECION A APARTADOS DE LAS UNIDADES*/
@@ -2352,30 +2346,6 @@ input[type="checkbox"] {
   width: 48%; /* Para asegurar que el enlace tenga el mismo tamaño que el botón */
 }
 
-
-/* Ajustes para pantallas móviles */
-@media (max-width: 768px) {
-  .course-container {
-      flex-direction: column;
-  }
-
-  .course-main {
-      width: 100%;
-      margin-right: 0;
-  }
-
-  .course-sidebar {
-      width: 100%;
-      margin-top: 20px;
-      position: static;
-  }
-
-  .unit-circle {
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-  }
-}
 
 /*Footer*/
 
