@@ -2384,6 +2384,308 @@ input[type="checkbox"] {
   width: 48%; /* Para asegurar que el enlace tenga el mismo tamaño que el botón */
 }
 
+/* Media Query para pantallas de 1024px */
+@media (max-width: 1024px) {
+  .Curso-contenedor-principal {
+    flex-direction: column; /* Cambiar la dirección de flex para apilar los elementos */
+    padding: 15px;
+  }
+
+  .curso-ilustracion {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .curso-ilustracion h1 {
+    font-size: 28px;
+  }
+
+  .Unidad-temas h3 {
+    font-size: 22px;
+  }
+
+  .Unidad-temas p, .Unidad-temas li {
+    font-size: 16px;
+  }
+
+  .imagenes-de-unidades img {
+    width: 100%; /* Las imágenes se ajustan al 100% del ancho */
+  }
+
+  .botones-container {
+    flex-direction: column; /* Los botones se alinean verticalmente */
+    align-items: center;
+  }
+
+  .boton {
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
+    margin-bottom: 10px; /* Añadir espacio entre los botones */
+  }
+}
+
+/* Media Query para pantallas de 768px */
+@media (max-width: 768px) {
+  .Curso-contenedor-principal {
+    padding: 10px;
+  }
+
+  .curso-ilustracion h1 {
+    font-size: 24px;
+  }
+
+  .Unidad-temas h3 {
+    font-size: 20px;
+  }
+
+  .Unidad-temas p, .Unidad-temas li {
+    font-size: 15px;
+  }
+
+  .imagenes-de-unidades img {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .botones-container {
+    max-width: 500px; /* Limitar el tamaño máximo de los botones */
+  }
+
+  .boton {
+    padding: 12px 20px;
+  }
+}
+
+/* Estilos generales para pantallas grandes */
+.Curso-contenedor-principal {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 5rem;
+  text-align: justify;
+}
+
+.curso-ilustracion {
+  width: 65%;
+  margin-right: 5%;
+}
+
+.curso-ilustracion h1 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.curso-ilustracion h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.Curso-video-principal {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/*TEMAS DEL CURSO*/
+.Unidad-temas h3 {
+  margin-top: 2rem;
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.Unidad-temas p {
+  line-height: 2.3rem;
+  font-size: 17px;
+}
+
+.Unidad-temas li {
+  font-size: 20px;
+  margin-left: 15px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.imagenes-de-unidades {
+  display: flex;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.imagenes-de-unidades img {
+  width: 50%;
+  height: auto;
+}
+
+.imagen-unidad-apartado {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 0 20px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.imagenes-unidades {
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16/9;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imagenes-unidades img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Media Query para pantallas de 480px o menos (dispositivos móviles) */
+@media (max-width: 480px) {
+  /* General - Eliminar el slider horizontal */
+  body {
+    overflow-x: hidden; /* Elimina el desbordamiento horizontal */
+  }
+
+  /* Estilo para el contenedor principal */
+  .Curso-contenedor-principal {
+    flex-direction: column; /* Todo el contenido en una columna */
+    padding: 10px;
+    margin-top: 5rem;
+  }
+
+  /* Ajustar la ilustración principal */
+  .curso-ilustracion {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .curso-ilustracion h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .curso-ilustracion h3 {
+    font-size: 18px;
+  }
+
+  .Unidad-temas h3 {
+    font-size: 18px;
+  }
+
+  .Unidad-temas p, .Unidad-temas li {
+    font-size: 14px;
+  }
+
+  /* Las imágenes dentro de las unidades se apilan de forma vertical */
+  .imagenes-de-unidades {
+    display: block; /* Cambiar de flex a block para apilar las imágenes */
+    margin-top: 2rem;
+  }
+
+  .imagenes-de-unidades img {
+    width: 100%; /* Asegurarse que las imágenes ocupen todo el ancho disponible */
+    margin-bottom: 15px; /* Añadir espacio entre las imágenes */
+    height: auto; /* Mantener la proporción de la imagen */
+    object-fit: contain; /* Asegurar que no se corten ni deformen */
+  }
+
+  /* Asegurarse de que las imágenes en las secciones de unidades se apilen verticalmente */
+  .imagen-unidad-apartado {
+    grid-template-columns: 1fr; /* Una sola columna para apilar las imágenes */
+    gap: 20px;
+    margin: 0 20px;
+  }
+
+  .imagen-unidad-apartado .imagenes-unidades {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  .imagen-unidad-apartado .imagenes-unidades img {
+    width: 90%; /* Imágenes en tamaño completo */
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 15px; /* Añadir espacio entre las imágenes */
+  }
+
+  /* Asegurarse de que las imágenes de la galería se ajusten al 100% del ancho */
+  .imagen-galeria-unidad {
+    grid-template-columns: 1fr; /* Una sola columna para apilar las imágenes */
+  }
+
+  /* Asegurarse de que las imágenes de la galería se ajusten al 100% del ancho */
+  .imagenes-unidades-galeria img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px; /* Añadir espacio entre las imágenes */
+  }
+
+  /* Ajustar los botones para que se alineen en columna */
+  .botones-container {
+    flex-direction: column; /* Los botones se apilan verticalmente */
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  .boton {
+    width: 100%; /* Los botones ocupan todo el ancho disponible */
+    padding: 12px 20px;
+    margin-top: 10px; /* Añadir espacio entre los botones */
+  }
+
+  .boton-link {
+    text-decoration: none;
+    width: 100%; /* El enlace ocupa el 100% de ancho */
+  }
+
+  /* Desactivar el menú lateral en pantallas móviles */
+  .curso-indice {
+    position: relative;
+    display: block; /* Mover el índice al final */
+    top: 0; /* Asegurar que el índice esté al final */
+    width: 100%;
+    margin-top: 30px; /* Separarlo de otros elementos */
+  }
+
+  .unidades-indice {
+    list-style: none;
+    padding: 0;
+  }
+
+  .unidades-indice li a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Asegurar que el menú lateral no se solape */
+  .unidades-indice li a {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    text-align: left; /* Asegurar que el texto esté alineado a la izquierda */
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    color: #333;
+    text-decoration: none;
+  }
+
+}
+
 
 /*Footer*/
 
