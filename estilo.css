@@ -2121,7 +2121,6 @@ input[type="checkbox"] {
   }
 }
 
-
 /*APARTADO DEL CURSO COMO TAL*/
 
 /* Estilos generales */
@@ -2192,27 +2191,66 @@ input[type="checkbox"] {
   height: auto; /* Mantiene la proporción de la imagen */
 }
 
-.imagen-unidad-apartado{
+.imagen-unidad-apartado {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Cuatro columnas */
-  gap: 5px; /* Espacio entre las imágenes */
-  padding: 30px;
-  margin-left: -1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Tamaño mínimo mayor para imágenes más grandes */
+  gap: 20px;
+  margin: 0 20px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
-.imagenes-unidades{
-  width: 400px;
-  height: 280px; /* Puedes ajustar la altura de cada contenedor */
+.imagenes-unidades {
+  overflow: hidden;
+  border-radius: 8px;
+  
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f0f0; /* Color de fondo para mejor visibilidad */
+  aspect-ratio: 16/9;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .imagenes-unidades img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionar */
+  object-fit: contain;
+}
+
+.imagen-unidad-apartado .imagenes-unidades:nth-child(1),
+.imagen-unidad-apartado .imagenes-unidades:nth-child(2) {
+  transform: scale(1.5); /* Escalar para hacerlas un poco más grandes */
+}
+
+/* Centrar la tercera imagen en una fila debajo de las primeras dos */
+.imagen-unidad-apartado .imagenes-unidades:nth-child(3) {
+  grid-column: span 2; /* Hace que ocupe dos columnas y se centre debajo de las primeras dos */
+  justify-self: center; /* Centra el elemento en el espacio */
+}
+
+/*APARTADO PARA CUATRO IMAGENES EN LAS UNIDADES*/
+
+.imagen-galeria-unidad {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas para que las imágenes se acomoden en un diseño 2x2 */
+  gap: 20px;
+  margin: 0 20px;
+}
+
+.imagenes-unidades-galeria {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.imagenes-unidades-galeria img {
+  width: 300px;
+  height: 400px;
+  object-fit: contain; /* Asegura que la imagen mantenga su proporción sin cortarse */
 }
 
 /*RECURSOS ADICIONALES*/
