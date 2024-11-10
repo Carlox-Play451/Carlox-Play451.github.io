@@ -2686,6 +2686,103 @@ input[type="checkbox"] {
 
 }
 
+/* Contenedor principal */
+.Sobre-Nosotros {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 5rem;
+}
+
+/* Estilo del logo */
+.logo-illustre {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 5rem;
+}
+
+.logo-illustre img {
+  width: 250px;
+  height: auto;
+}
+
+/* Estilo de la sección ¿Quiénes somos? */
+.about-us {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.about-us .texto-descripcion{
+  max-width: 600px;
+  text-align: center;
+  margin: 0 30px;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-us p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Estilo para las imágenes a los costados */
+.about-us .imagen-izquierda, .about-us .imagen-derecha {
+  width: 70%;  /* 45% para que ambas imágenes ocupen un buen espacio */
+  margin: 10px;
+}
+
+.about-us .imagen-izquierda img, .about-us .imagen-derecha img {
+  width: 100%;
+  height: auto;
+}
+
+/* Estilo de Visión y Misión */
+.vision, .mission {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #f1f1f128;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.vision h3, .mission h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.vision p, .mission p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Imagen final grande */
+.large-image {
+  width: 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.large-image img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px;
+}
+
+
 
 /*Footer*/
 
