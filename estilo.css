@@ -1840,6 +1840,70 @@ input[type="checkbox"] {
   }
 }
 
+.seccion-descargas {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.unidad-recursos {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.titulo-unidad {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: orangered;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.titulo-unidad:hover {
+  text-decoration: underline;
+}
+
+.lista-recursos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recurso-unidades {
+  display: flex;
+  align-items: center;
+}
+
+.icono-recurso {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+.contenido-recurso {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo-recurso {
+  font-weight: bold;
+  color: orangered;
+  text-decoration: none;
+  margin: 0;
+}
+
+.titulo-recurso:hover {
+  text-decoration: underline;
+  color: rgb(161, 49, 9);
+}
+
+.descripcion-recurso {
+  font-size: 0.9em;
+  color: #666;
+  margin: 5px 0 0;
+}
+
 /*apartado de  contacto*/
 
 .titulo-apartado {
