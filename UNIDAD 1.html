@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIDAD 1</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     
@@ -30,13 +31,15 @@
 
         <!--APARTADO DEL CURSO-->
 
-        <div class="Curso-contenedor-principal">
+        <div class="Curso-contenedor-principal" data-aos="fade-up"
+        data-aos-duration="3000">
+        
             <!-- Contenido principal -->
             <div class="curso-ilustracion">
                 <h1>Unidad 1: Anatomia básica</h1>
                 <h3>Tema 1: Simplificando la figura humana</h3>
                 <video class="Curso-video-principal" controls>
-                    <source src="ruta-del-video-introduccion.mp4" type="video/mp4">
+                    <source src="VIDEOS CURSOS/UNIDAD 1.mp4" type="video/mp4">
                     Tu navegador no soporta la reproducción de video.
                 </video>
 
@@ -218,6 +221,14 @@
           </div>
         </div>
       </footer>
+
+       <!--Animaciones-->
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+       <script>
+         AOS.init({
+           duration: 1700,
+         });
+       </script>
 
 </body>
 </html>
