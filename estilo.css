@@ -674,29 +674,8 @@ body {
   }
   
   #lightbox .nav-button{
-    margin-top: 20.5rem;
-    font-size: 3rem;
-  }
-  #lightbox .prev{
-    margin-left: 4rem;
-  }
-  #lightbox .next{
-    margin-right: 4rem;
-  }
-}
-
-@media (max-width: 320px) {
-  #lightbox .nav-button {
-    margin-top: 10rem; /* Reduce el margen superior para pantallas más pequeñas */
-    font-size: 2.5rem; /* Reduce el tamaño de fuente */
-  }
-
-  #lightbox .prev {
-    margin-left: 1rem; /* Margen izquierdo ajustado */
-  }
-
-  #lightbox .next {
-    margin-right: 1rem; /* Margen derecho ajustado */
+    margin-top: 17rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -1617,6 +1596,96 @@ input[type="checkbox"] {
   .ver-mas {
     font-size: 14px;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .content-wrapper {
+    flex-direction: column;
+    padding: 5px; /* Reduce el padding para maximizar el espacio visible */
+  }
+
+  .titulo-principal-curso h1 {
+    font-size: 24px; /* Reduce el tamaño del título */
+  }
+
+  .titulo-principal-curso p {
+    font-size: 16px; /* Reduce ligeramente el tamaño del texto */
+  }
+
+  .video-placeholder {
+    width: 100%; /* Asegura que el video ocupe todo el ancho disponible */
+    margin-right: 0; /* Elimina márgenes negativos */
+  }
+
+  .introduccion-texto-1,
+  .introduccion-texto-3 {
+    width: 100%;
+    padding: 5px; /* Reduce el padding */
+    margin-left: 0;
+    font-size: 14px; /* Ajusta el tamaño de fuente para pantallas pequeñas */
+    line-height: 1.4; /* Ajusta la altura de línea para mejor legibilidad */
+  }
+
+  .introduccion-texto-1 p {
+    margin-bottom: 25rem; /* Ajusta el margen inferior */
+  }
+
+  .introduccion-texto-1 h2,
+  .introduccion-texto-3 h2 {
+    font-size: 1.4rem; /* Reduce el tamaño del encabezado */
+    margin-top: 1rem;
+  }
+
+  .introduccion-texto-2 h2{
+    margin-top: 4rem;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 10px; /* Espacio entre videos reducido */
+    padding: 0;
+  }
+
+  .video-item {
+    text-align: center;
+    color: black;
+    margin-bottom: 15px; /* Espacio inferior ajustado */
+  }
+
+  .imagen-recuadros {
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 5px; /* Reduce el espacio entre imágenes */
+  }
+
+  .imagen-referencia,
+  .imagen-presentacion {
+    width: 100%;
+    height: auto; /* Asegura que las imágenes se adapten proporcionalmente */
+  }
+
+  .contenidos-estructurados {
+    padding: 5px;
+    margin: 5px 0;
+    margin-top: 1rem; /* Ajusta el margen superior */
+  }
+
+  .unidad ul {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .unidad-header h3 {
+    font-size: 1rem; /* Ajusta el tamaño del encabezado */
+  }
+
+  .unidad ul li {
+    font-size: 0.9rem; /* Reduce el tamaño de los ítems */
+  }
+
+  .ver-mas {
+    font-size: 12px; /* Tamaño más pequeño para el texto de "ver más" */
+    margin-top: 5px;
   }
 }
 
