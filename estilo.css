@@ -8,10 +8,21 @@
 
 body {
     background: linear-gradient(to bottom, #ffca9f, #a7c7e7);
-    /*background: linear-gradient(to bottom, #ffffff 0%, #ffffff 70%, #ffe6cc 80%, #fbbf77 90%, #fbbf77 100%);*/
     line-height: 1.6;
     overflow-x: hidden; /* Evitar slider horizontal */
     font-family: SF Pro Display, sans-serif;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+}
+::-webkit-scrollbar-track{
+  background-color: #a7c7e7;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #ffca9f;
+  border-radius: 10px;
+  border: 1.7px solid rgba(0, 0, 0, 0.514);
 }
 
 .header {
@@ -366,8 +377,36 @@ body {
   object-fit: contain;
 }
 
-/*RESPONSIVE INDEX*/
+#lightbox .nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+  border: 2px solid #f09864; /* Borde que combina con el color del texto */
+  color: #f09864; /* Color del texto */
+  font-size: 2.5rem; /* Tamaño de fuente ligeramente mayor */
+  cursor: pointer;
+  padding: 15px; /* Espaciado mayor para un botón más cómodo */
+  border-radius: 50%; /* Forma circular */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
+}
 
+#lightbox .nav-button:hover {
+  transform: translateY(-50%) scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
+  background: #f09864; /* Cambia el fondo al color del texto */
+  color: #fff; /* Cambia el color del texto a blanco */
+}
+
+#lightbox .prev {
+  left: 30px;
+}
+
+#lightbox .next {
+  right: 30px;
+}
 
 /* Estilos para pantallas de 768px a 1024px (tabletas) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -616,6 +655,7 @@ body {
   #lightbox img {
     max-width: 85%; /* Reduce el tamaño para evitar desbordamientos */
     margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   .textos-slider h3 {
@@ -631,6 +671,17 @@ body {
   [data-aos="fade-right"] {
     transform: none !important; /* Desactiva el efecto en esas resoluciones */
     opacity: 1 !important;
+  }
+  
+  #lightbox .nav-button{
+    margin-top: 20.5rem;
+    font-size: 3rem;
+  }
+  #lightbox .prev{
+    margin-left: 7rem;
+  }
+  #lightbox .next{
+    margin-right: 7rem;
   }
 }
 
@@ -1466,7 +1517,8 @@ input[type="checkbox"] {
   }
 
   .video-placeholder{
-    width: 350px;
+    width: 400px;
+    margin-right: -5px;  
   }
 
   .introduccion-texto-1,
@@ -2782,7 +2834,6 @@ input[type="checkbox"] {
 
 .about-us .texto-descripcion{
   max-width: 600px;
-  text-align: center;
   margin: 0 30px;
 }
 
@@ -2790,9 +2841,11 @@ input[type="checkbox"] {
   font-size: 2.5rem;
   color: #333;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .about-us p {
+  text-align: justify;
   font-size: 1.2rem;
   color: #555;
   line-height: 1.6;

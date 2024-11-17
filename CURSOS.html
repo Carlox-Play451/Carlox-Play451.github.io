@@ -24,13 +24,14 @@
         <nav class="navbar">
           <a href="CURSOS.html" style="--i:1;">Cursos</a>
           <a href="sobre nosotros.html" style="--i:3;">Sobre nosotros</a>
-          <a href="CONTACTO.html" style="--i:4;">Contactanos</a>
+          <a href="CONTACTO.html" style="--i:4;">Contáctanos</a>
         </nav>
     </header>
 
     <!--PRESENTACION-->
 
-    <div class="content-box">
+    <div class="content-box" data-aos="fade-right"
+    data-aos-duration="2500">
         <div class="Texto-presentacion-curso">
           <h2>Cursos</h2>
           <p>
@@ -46,7 +47,8 @@
 
       <!--SECCION DE BUSQUEDA DE CURSOS-->
       
-      <div class="seccion-cursos">
+      <div class="seccion-cursos" data-aos="fade-left"
+      data-aos-duration="2500">
         <div class="filtros-busqueda">
           <h2>Cursos</h2>
           <div class="barra-busqueda">
@@ -143,5 +145,13 @@
     </div>
   </footer>
  
+    <!--Animaciones-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1700,
+      });
+    </script>
+
 </body>
 </html>

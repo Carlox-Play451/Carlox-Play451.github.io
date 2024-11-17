@@ -6,6 +6,7 @@
     <title>Contacto</title>
     <link rel="stylesheet" href="estilo.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     
@@ -25,18 +26,20 @@
         <nav class="navbar">
             <a href="CURSOS.html" style="--i:1;">Cursos</a>
             <a href="sobre nosotros.html" style="--i:3;">Sobre nosotros</a>
-            <a href="CONTACTO.html" style="--i:4;">Contactanos</a>
+            <a href="CONTACTO.html" style="--i:4;">Contáctanos</a>
           </nav>
     </header>
     
     <!--APARTADO DE CONTACTO-->
 
-    <div class="titulo-apartado">
+    <div class="titulo-apartado" data-aos="fade-up">
         <h2>Contáctanos</h2>
         <p>¿Alguna duda? Escríbenos un mensaje</p>
     </div>
 
-    <div class="contenedor-contacto">
+    <div class="contenedor-contacto" data-aos="fade-up"
+    data-aos-duration="2500">
+
         <div class="info-contacto">
             <h3>INFORMACIÓN DE CONTACTO</h3>
             <div class="contacto-izquierda">
@@ -117,6 +120,15 @@
           </div>
         </div>
       </footer>
+
+       <!--Animaciones-->
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+       <script>
+         AOS.init({
+           duration: 1700,
+         });
+       </script>
+ 
     
 </body>
 </html>

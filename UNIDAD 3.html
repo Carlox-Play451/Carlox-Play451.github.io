@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNIDAD 3</title>
     <link rel="stylesheet" href="estilo.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     
@@ -24,13 +25,15 @@
         <nav class="navbar">
           <a href="CURSOS.html" style="--i:1;">Cursos</a>
           <a href="sobre nosotros.html" style="--i:3;">Sobre nosotros</a>
-          <a href="CONTACTO.html" style="--i:4;">Contactanos</a>
+          <a href="CONTACTO.html" style="--i:4;">Contáctanos</a>
         </nav>
     </header>
 
         <!--APARTADO DEL CURSO-->
 
-        <div class="Curso-contenedor-principal">
+        <div class="Curso-contenedor-principal" data-aos="fade-up"
+        data-aos-duration="3000">
+
             <!-- Contenido principal -->
             <div class="curso-ilustracion">
                 <h1>Unidad 3: Luz y Sombra</h1>
@@ -89,26 +92,18 @@
                 <h2>Recursos adicionales del curso</h2>
 
 <div class="recurso-adicionales">
-  <img src="ICONOS/CLIP.svg" alt="PDF Icono">
+  <img src="ICONOS/RAR.svg" alt="PDF Icono">
   <div class="recurso-texto">
-    <a href="RECURSOS ADICIONALES/ILLAOI.psd" download>Dibujo de la unidad</a>
-    <p>Aqui puedes descargar el archivo de proyecto para vizualisarlo en Clip Studio Paint.</p>
+    <a href="RECURSOS ADICIONALES/UNIDAD 3/LUZ Y SOMBRA.rar" download>Luz y Sombra</a>
+    <p>Aqui puedes descargar las imagenes de luz y sombra aplicadas, en como afecta a superficies y analizarlas.</p>
   </div>
 </div>
 
 <div class="recurso-adicionales">
-  <img src="ICONOS/CLIP.svg" alt="ZIP Icono">
+  <img src="ICONOS/RAR.svg" alt="ZIP Icono">
   <div class="recurso-texto">
-    <a href="ruta-del-archivo.zip" download>PSD del personaje creado en vivo</a>
-    <p>Recurso extra</p>
-  </div>
-</div>
-
-<div class="recurso-adicionales">
-  <img src="ICONOS/PNG.svg" alt="PDF Icono">
-  <div class="recurso-texto">
-    <a href="ruta-del-archivo.pdf" download>Influencias</a>
-    <p>Te comparto algunas de mis influencias, ya que pueden ayudar a que te inspires y hagas algo nuevo.</p>
+    <a href="RECURSOS ADICIONALES/UNIDAD 3/PERSONAJES.rar" download>Personajes con luz y sombra</a>
+    <p>Aqui puedes descargar imagenes de luces y sombras aplicados ya a personajes.</p>
   </div>
 </div>
 
@@ -116,7 +111,7 @@
   <a href="Ilustracion cartoon.html" class="boton-link">
       <button class="boton">Página principal</button>
   </a>
-  <a href="UNIDAD 2.html" class="boton-link">
+  <a href="UNIDAD 4.html" class="boton-link">
       <button class="boton">Siguiente unidad</button>
   </a>
 </div>
@@ -162,6 +157,15 @@
           </div>
         </div>
       </footer>
+
+         <!--Animaciones-->
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+         <script>
+           AOS.init({
+             duration: 1700,
+           });
+         </script>
+   
 
 </body>
 </html>
