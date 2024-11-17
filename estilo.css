@@ -678,25 +678,25 @@ body {
     font-size: 3rem;
   }
   #lightbox .prev{
-    margin-left: 7rem;
+    margin-left: 4rem;
   }
   #lightbox .next{
-    margin-right: 7rem;
+    margin-right: 4rem;
   }
 }
 
 @media (max-width: 320px) {
   #lightbox .nav-button {
-    margin-top: 14rem; /* Reduce el margen superior para pantallas más pequeñas */
+    margin-top: 10rem; /* Reduce el margen superior para pantallas más pequeñas */
     font-size: 2.5rem; /* Reduce el tamaño de fuente */
   }
 
   #lightbox .prev {
-    margin-left: 2rem; /* Margen izquierdo ajustado */
+    margin-left: 1rem; /* Margen izquierdo ajustado */
   }
 
   #lightbox .next {
-    margin-right: 2rem; /* Margen derecho ajustado */
+    margin-right: 1rem; /* Margen derecho ajustado */
   }
 }
 
