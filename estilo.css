@@ -685,6 +685,21 @@ body {
   }
 }
 
+@media (max-width: 320px) {
+  #lightbox .nav-button {
+    margin-top: 14rem; /* Reduce el margen superior para pantallas más pequeñas */
+    font-size: 2.5rem; /* Reduce el tamaño de fuente */
+  }
+
+  #lightbox .prev {
+    margin-left: 2rem; /* Margen izquierdo ajustado */
+  }
+
+  #lightbox .next {
+    margin-right: 2rem; /* Margen derecho ajustado */
+  }
+}
+
 /*APARTADOS DE PRESENTACION DE CURSOS*/
 
 .content-box {
