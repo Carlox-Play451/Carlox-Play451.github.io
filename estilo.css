@@ -323,9 +323,6 @@ body {
   overflow: hidden; 
   display: flex;
   flex-direction: column; 
-  overflow: hidden; /* Mantiene el contenido dentro del límite */
-  display: flex;
-  flex-direction: column; /* imagen y el texto se apilen verticalmente */
 }
 
 .content img {
@@ -431,57 +428,6 @@ body {
 
 #lightbox .next {
     right: 30px;
-}
-/* Estilos para el lightbox */
-#lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  object-fit: contain;
-}
-
-#lightbox .nav-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
-  border: 2px solid #f09864; /* Borde que combina con el color del texto */
-  color: #f09864; /* Color del texto */
-  font-size: 2.5rem; /* Tamaño de fuente ligeramente mayor */
-  cursor: pointer;
-  padding: 15px; /* Espaciado mayor para un botón más cómodo */
-  border-radius: 50%; /* Forma circular */
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones suaves */
-}
-
-#lightbox .nav-button:hover {
-  transform: translateY(-50%) scale(1.1); /* Aumenta ligeramente el tamaño al pasar el mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Incrementa la sombra */
-  background: #f09864; /* Cambia el fondo al color del texto */
-  color: #fff; /* Cambia el color del texto a blanco */
-}
-
-#lightbox .prev {
-  left: 30px;
-}
-
-#lightbox .next {
-  right: 30px;
 }
 
 /* Estilos para pantallas de 768px a 1024px (tabletas) */
