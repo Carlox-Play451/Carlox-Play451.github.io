@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilustre Home</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="ICONOS/ILLUSTRE AZUL.svg" alt="Logo">
+        </a>
+    
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+    
+        <nav class="navbar">
+          <a href="CURSOS.html" style="--i:1;">Cursos</a>
+          <a href="sobre nosotros.html" style="--i:3;">Sobre nosotros</a>
+          <a href="CONTACTO.html" style="--i:4;">Contáctanos</a>
+        </nav>
+    </header>
+
+<!--HOME PAGE PRINCIAPAL-->
+    <div class="Contenedor-HOME">
+      <div class="CONTENIDO-HOME">
+        <div class="texto-contenido-home">
+          <h1 data-aos="fade-right">Descubre el <br> Dibujo Digital: <br> tu primer paso hacia <br> la <span class="highlight">creatividad</span></h1>
+          <div class="additional-image-container" data-aos="fade-up">
+            <img src="PERSONAJE/cielo estrellado.svg" alt="Nueva Imagen">
+          </div>
+        </div>
+        
+        <div class="Alvus-personaje" data-aos="fade-left">
+          <img src="PERSONAJE/Alvus.svg" alt="Personaje Ilustración">
+        </div>
+      </div>
+    </div>
+    
+            <div class="Ilustracion-digital-contenedor" 
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine">
+              <div class="left-image-container">
+                <img src="PERSONAJE/cielo estrellado.svg" alt="Imagen a la izquierda">
+            </div>
+                <h2 data-aos="fade-left">¿Qué es la Ilustración Digital?</h2>
+                <p>La ilustración digital es una disciplina artística que utiliza tecnologías digitales para crear, editar y presentar imágenes. Se puede considerar una evolución de las formas tradicionales de arte visual, ya que permite combinar técnicas clásicas con herramientas digitales, lo que amplía las posibilidades creativas y facilita el proceso de creación.<br></p>
+                <p>A diferencia de las técnicas manuales, en las que el artista utiliza medios como lápices, pinceles o acuarelas, la ilustración digital se lleva a cabo en dispositivos electrónicos como computadoras, tabletas gráficas o incluso teléfonos inteligentes, utilizando software especializado. Estas herramientas digitales ofrecen un conjunto amplio de opciones, como pinceles virtuales personalizables, capas, efectos de iluminación y textura, así como la posibilidad de deshacer acciones, lo que otorga mayor libertad y flexibilidad al artista.</p>
+            </div>
+
+    <!--CARROUSEL-->
+<div class="titulo-galeria">
+  <h1>Galeria de Artistas</h1>
+</div>
+
+    <section class="collection" 
+          data-aos="fade-down"
+           data-aos-easing="linear"
+             data-aos-duration="1500">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/Ilya Kuvshinov.png" alt="">
+          <div class="textos-slider">
+            <h3>Ilya Kuvshinov</h3>
+            
+          </div>
+
+        </div>
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/James Jean.jpg" alt="">
+          <div class="textos-slider">
+            <h3>James Jean</h3>
+            
+          </div>
+        </div>
+
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/Loish.png" alt="">
+          <div class="textos-slider">
+            <h3>Loish</h3>
+            
+          </div>
+        </div>
+
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/Pascal Campion.png" alt="">
+          <div class="textos-slider">
+            <h3>Pascal Campion</h3>    
+            
+          </div>
+        </div>
+        
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/Peter Mohrbacher.png" alt="">
+          <div class="textos-slider">
+            <h3>Peter Mohrbacher</h3>
+           
+          </div>
+        </div>
+        <div class="content swiper-slide">
+          <img src="ILUSTRADORES/Teagan White.png" alt="">
+          <div class="textos-slider">
+            <h3>Teagan White</h3>
+         
+          </div>
+        </div>
+
+        </div>
+        </div>
+      </section>
+
+  <!--FOOTER-->
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="logo-footer">
+        <a href="#" class="logo">
+          <img src="ICONOS/ILLUSTRE LOGO.svg" alt="Logo">
+        </a>
+      </div>
+      <div class="contactos">
+        <h2>Contactos</h2>
+        <ul>
+          <li><a href="mailto:info@ilustre.com">info@ilustre.com</a></li>
+          <li><a href="tel:+1234567890">+1234567890</a></li>
+          <li><a href="#" target="_blank">Facebook</a></li>
+          <li><a href="#" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="comentarios">
+        <h2>Entra en nuestra Newsletter</h2>
+        <div class="comentario-box">
+          <input type="email" placeholder="Tu email" id="email" />
+          <button>Suscribirse</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </footer>
+
+      <!--JS CARROUSEL-->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="JS/galeria.js"></script>
+
+      <!--Animaciones-->
+      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 1700,
+        });
+      </script>
+
+      <!--PREVIEW LIGHTBOX JS-->
+      <script src="JS/preview.js"></script>
+    
+</body>
+</html>
