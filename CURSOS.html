@@ -47,75 +47,93 @@
 
       <!--SECCION DE BUSQUEDA DE CURSOS-->
       
-      <div class="seccion-cursos" data-aos="fade-left"
-      data-aos-duration="2500">
-        <div class="filtros-busqueda">
-          <h2>Cursos</h2>
-          <div class="barra-busqueda">
-            <input type="text" placeholder="Buscar cursos...">
-            <button type="button">Buscar</button>
-          </div>
-          <div class="filtros-opciones">
+   <div class="seccion-cursos" data-aos="fade-left" data-aos-duration="2500">
+        
+    <div class="filtros-busqueda">
+        <h2>Cursos</h2>
+        
+        <div class="barra-busqueda">
+            <input type="text" id="inputBusqueda" placeholder="Buscar cursos...">
+        </div>
+        
+        <div class="filtros-opciones">
             <h3>Filtrar por:</h3>
-            <label><input type="checkbox"> Básico</label>
-            <label><input type="checkbox"> Intermedio</label>
-            <label><input type="checkbox"> Avanzado</label>
-            <h3>Categorías:</h3>
-            <label><input type="checkbox" checked> Ilustración digital</label>
-            <label><input type="checkbox"> Proporciones</label>
-            <label><input type="checkbox"> Iluminación</label>
-            <label><input type="checkbox"> Diseño de personajes</label>
-            <a href="#">Limpiar filtros</a>
-          </div>
-        </div>
-      
-        <div class="cajas-cursos">
-          <a href="Ilustracion cartoon.html" class="caja-curso">
-            <div>
-              <img src="CURSOS/CURSO.png" alt="Curso 1">
-              <div class="info-curso">
-                <h4>Diseño de Personaje Estilo Cartoon.</h4>
-                <p>Un curso de Axel Herrera. Aprende lo básico del estilo cartoon.</p>
-              </div>
-            </div>
-          </a>
-          
-          <div class="caja-curso">
-            <img src="CURSOS/NEXT.png"  alt="Próximamente">
-            <div class="info-curso">
-              <h4>Próximamente...</h4>
-            </div>
-          </div>
-          <div class="caja-curso">
-            <img src="CURSOS/NEXT.png"  alt="Próximamente">
-            <div class="info-curso">
-              <h4>Próximamente...</h4>
-            </div>
-          </div>
-          <div class="caja-curso">
-            <img src="CURSOS/NEXT.png"  alt="Próximamente">
-            <div class="info-curso">
-              <h4>Próximamente...</h4>
+            <label><input type="checkbox" data-grupo="nivel" value="basico"> Básico</label>
+            <label><input type="checkbox" data-grupo="nivel" value="intermedio"> Intermedio</label>
+            <label><input type="checkbox" data-grupo="nivel" value="avanzado"> Avanzado</label>
             
-            </div>
-          </div>
-          <div class="caja-curso">
-            <img src="CURSOS/NEXT.png"  alt="Próximamente">
-            <div class="info-curso">
-              <h4>Próximamente...</h4>
-             
-            </div>
-          </div>
-          <div class="caja-curso">
-            <img src="CURSOS/NEXT.png"  alt="Próximamente">
-            <div class="info-curso">
-              <h4>Próximamente...</h4>
-              
-            </div>
-          </div>
-          <button class="boton-ver-mas">Ver Más...</button>
+            <h3>Categorías:</h3>
+            <label><input type="checkbox" data-grupo="categoria" value="ilustracion-digital" checked> Ilustración digital</label>
+            <label><input type="checkbox" data-grupo="categoria" value="proporciones"> Proporciones</label>
+            <label><input type="checkbox" data-grupo="categoria" value="iluminacion"> Iluminación</label>
+            <label><input type="checkbox" data-grupo="categoria" value="diseno-personajes"> Diseño de personajes</label>
+            
+            <a href="#" id="limpiarFiltros">Limpiar filtros</a>
         </div>
-      </div> 
+    </div>
+    
+    <div class="cajas-cursos" id="listaCursos">
+        
+        <a href="Ilustracion cartoon.html" class="caja-curso" data-nivel="basico" data-categoria="ilustracion-digital diseno-personajes">
+            <div>
+                <img src="CURSOS/CURSO.png" alt="Curso 1">
+                <div class="info-curso">
+                    <h4>Diseño de Personaje Estilo Cartoon.</h4>
+                    <p>Un curso de Axel Herrera. Aprende lo básico del estilo cartoon y a diseñar personajes.</p>
+                </div>
+            </div>
+        </a>
+        
+        <div class="caja-curso" data-nivel="intermedio" data-categoria="proporciones iluminacion">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Proporciones y Luz Avanzadas.</h4>
+                <p>Dominio intermedio en proporciones y manejo de iluminación.</p>
+            </div>
+        </div>
+        
+        <div class="caja-curso" data-nivel="avanzado" data-categoria="diseno-personajes">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Diseño de Personajes Épicos.</h4>
+                <p>Próximamente un curso de nivel avanzado...</p>
+            </div>
+        </div>
+
+        <div class="caja-curso" data-nivel="proximamente" data-categoria="proximamente">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Próximamente...</h4>
+                <p>¡Vuelve pronto!</p>
+            </div>
+        </div>
+        <div class="caja-curso" data-nivel="proximamente" data-categoria="proximamente">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Próximamente...</h4>
+                <p>¡Vuelve pronto!</p>
+            </div>
+        </div>
+        <div class="caja-curso" data-nivel="proximamente" data-categoria="proximamente">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Próximamente...</h4>
+                <p>¡Vuelve pronto!</p>
+            </div>
+        </div>
+        
+        <div class="caja-curso" data-nivel="proximamente" data-categoria="proximamente">
+            <img src="CURSOS/NEXT.png" alt="Próximamente">
+            <div class="info-curso">
+                <h4>Próximamente...</h4>
+                <p>¡Vuelve pronto!</p>
+            </div>
+        </div>
+        
+        <button class="boton-ver-mas">Ver Más...</button>
+    </div>
+
+</div>
       
      <!--FOOTER-->
   
@@ -151,6 +169,10 @@
       AOS.init({
         duration: 1700,
       });
+    </script>
+
+    <!--JS PARA LAS CHECKLIST Y EL BUSCADOR-->
+    <script src="JS/CURSOLISTAS.js">
     </script>
 
 </body>

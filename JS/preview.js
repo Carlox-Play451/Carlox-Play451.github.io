@@ -1,6 +1,4 @@
-// =========================================================================
 // LÓGICA DE LIGHTBOX OPTIMIZADA
-// =========================================================================
 
 const images = document.querySelectorAll('.swiper-slide img');
 const lightbox = document.createElement('div');
@@ -8,8 +6,6 @@ lightbox.id = 'lightbox';
 document.body.appendChild(lightbox);
 
 let currentImageIndex = 0;
-
-// 1. CREACIÓN DE ELEMENTOS ESTÁTICOS (solo se crean una vez)
 
 const prevButton = document.createElement('button');
 prevButton.classList.add('nav-button', 'prev');
