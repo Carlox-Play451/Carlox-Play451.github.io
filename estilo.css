@@ -702,56 +702,75 @@ body {
 }
 
 /*APARTADOS DE PRESENTACION DE CURSOS*/
+/* ========================================================== */
+/* ESTILOS DE PRESENTACIÓN Y GENERALES */
+/* ========================================================== */
 
 .content-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #f9b774;
-  border-radius: 20px;
-  padding: 20px;
-  max-width: 1300px;
-  max-height: 1000px;
-  margin: 0 auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.586);
-  margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9b774;
+    border-radius: 20px;
+    padding: 40px; /* Ajuste para desktop */
+    max-width: 1300px;
+    max-height: none; 
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.586);
+    margin-top: 10rem;
 }
 
 .Texto-presentacion-curso {
-  max-width: 180%;
-  color: black;
+    max-width: 50%; /* Ajuste para desktop */
+    color: black;
+    text-align: left;
 }
 
 .Texto-presentacion-curso h2 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-  margin-top: -20px;
-  margin-left: 10rem;
+    font-size: 3rem; 
+    margin-bottom: 15px;
+    margin-top: 0;
+    margin-left: 0; 
 }
 
 .Texto-presentacion-curso p {
-  max-width: 30rem;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: justify;
-  margin-left: 30px;
-  color: black;
+    max-width: 30rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+    margin-left: 0; 
+    color: black;
 }
 
 .image-content {
-  max-width: 100%;
+    max-width: 80%;
 }
 
 .image-content img {
-  width: 700px;
-  height: auto;
-  border-radius: 10px;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
 }
 
-/*SECCION DE BUSQUEDA DE CURSOS*/
-/* --- Clases de Funcionalidad JS --- */
+/* ========================================================== */
+/* APARTADO DE BUSQUEDA DE CURSOS */
+/* ========================================================== */
+
+/* --- Clases de Funcionalidad JS (Animación) --- */
 .oculto {
-    display: none !important; /* Clase crucial para ocultar los cursos filtrados */
+    opacity: 0 !important;
+    
+    /* CAMBIOS CLAVE: Eliminamos el retraso y hacemos la transición de colapso inmediata */
+    height: 0 !important; 
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    
+    transition: 
+        opacity 0.5s ease, 
+        height 0.5s ease, 
+        margin 0.5s ease, 
+        padding 0.5s ease;
 }
 
 /* --- Estilos Generales --- */
@@ -776,14 +795,11 @@ body {
 }
 
 .barra-busqueda input {
-    padding: 10px 20px; /* Ajuste para compensar la falta del botón */
+    padding: 10px 20px; 
     border-radius: 25px;
     border: 1px solid #ccc;
     width: 100%;
-    /* margin-right: 20px; <--- Ya no es necesario */
 }
-
-/* ELIMINADO: .barra-busqueda button { ... } */
 
 .filtros-opciones {
     margin-bottom: 20px;
@@ -813,24 +829,35 @@ body {
     display: inline-block; 
 }
 
+/* --- Cajas de Cursos (Optimización de Altura Uniforme y Botón) --- */
 .cajas-cursos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: 80%;
+    width: 75%; /* Ancho de desktop */
     position: relative;
     text-decoration: none;
+    /* CLAVE: Pega el contenido arriba para que el botón no se separe */
+    align-content: start; 
 }
 
 .caja-curso {
+    transition: 
+        transform 0.3s ease, 
+        opacity 0.3s ease, 
+        height 0.3s ease, 
+        margin 0.3s ease, 
+        padding 0.3s ease; 
+        
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s ease;
     text-decoration: none; 
     color: inherit; 
-    display: block; 
+    display: flex; 
+    flex-direction: column;
+    min-height: 350px;
 }
 
 .caja-curso:hover {
@@ -839,12 +866,17 @@ body {
 
 .caja-curso img {
     width: 100%;
-    height: 150px;
+    height: 150px; 
     object-fit: cover;
+    flex-shrink: 0; 
 }
 
 .info-curso {
     padding: 15px;
+    flex-grow: 1; 
+    min-height: 120px; 
+    display: flex; 
+    flex-direction: column;
 }
 
 .info-curso h4 {
@@ -856,10 +888,12 @@ body {
 .info-curso p {
     font-size: 1rem;
     color: #242424;
+    flex-grow: 1; 
 }
 
 .boton-ver-mas {
-    grid-column: span 3;
+    /* Ocupa todas las columnas para centrarse */
+    grid-column: 1 / -1; 
     justify-self: center;
     padding: 10px 20px;
     background-color: #ffa500;
@@ -868,7 +902,9 @@ body {
     border-radius: 25px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 30px;
+    /* Ajuste de margen para pegarlo a la última fila */
+    margin-top: 10px; 
+    margin-bottom: 40px;
     display: none; 
 }
 
@@ -876,182 +912,306 @@ body {
     background-color: #ff8c00;
 }
 
-/* Mejora de la CHECKBOX */
+/* --- Mejora de la CHECKBOX - Estilo Moderno y Limpio --- */
 .filtros-opciones input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    
     width: 17px;
     height: 17px;
-    border: 3px solid #000000;
-    border-radius: 20%;
-    background-color: #ffffff;
-    cursor: pointer;
-    margin-right: 5px;
+    margin-right: 8px;
     flex-shrink: 0; 
-}
-
-.filtros-opciones input[type="checkbox"]:checked {
-    background-color: #000000;
-    border-color: #4682c2;
-    padding: 3px;
-}
-
-.filtros-opciones input[type="checkbox"]:hover {
-    border-color: #000000;
-}
-
-/* Media query para pantallas de 1024px */
-@media (max-width: 1024px) {
-  .content-box {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-    margin-top: 8rem;
-  }
-
-  .Texto-presentacion-curso h2 {
-    font-size: 2.5rem;
-    margin-left: 0;
-    margin-top: .5rem;
-  }
-
-  .Texto-presentacion-curso p {
-    font-size: 1rem;
-    margin-left: 0;
-  }
-
-  .image-content img {
-    width: 100%;
-  }
-
-  /* Sección de búsqueda de cursos */
-  .seccion-cursos {
-    display: flex;
-    flex-direction: row; /* Mantener filtros a la izquierda y cursos a la derecha */
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 3rem;
-  }
-
-  .filtros-busqueda {
-    width: 25%; /* Ajustar ancho de los filtros */
-    margin-right: 16px;
-  }
-
-  .cajas-cursos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas de cursos */
-    gap: 20px;
-    width: 65%; /* Ajustar ancho de la caja de cursos */
-  }
-
-  .boton-ver-mas {
-    grid-column: span 2;
-    justify-self: center;
-    padding: 10px 20px;
-    background-color: #ffa500;
-    color: white;
-    border: none;
-    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 30px;
-  }
+    
+    border: none;
+    background-color: transparent;
+    position: relative; 
 }
 
-/* Media query para pantallas de 764px */
-@media (max-width: 764px) {
-  .content-box {
-    flex-direction: column;
-    padding: 10px;
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-  .Texto-presentacion-curso h2 {
-    font-size: 2rem;
-    margin-left: 0;
-  }
-
-  .Texto-presentacion-curso p {
-    font-size: 1rem;
-    margin-left: 0;
-    text-align: center;
-  }
-
-  .image-content img {
+.filtros-opciones input[type="checkbox"]::before {
+    content: '';
+    display: block;
     width: 100%;
-  }
-
-  .seccion-cursos {
-    flex-direction: column;
-    margin-top: 5rem;
-  }
-
-  .cajas-cursos {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-  }
-
-  .filtros-busqueda {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+    height: 100%;
+    
+    border: 2px solid #333; 
+    border-radius: 4px; 
+    background-color: #ffffff;
+    
+    transition: all 0.2s ease;
 }
 
-/* Media query para pantallas de 480px (móviles) */
-  @media (max-width: 480px) { 
-    .content-box { 
-      flex-direction: column; 
-      text-align: center; 
-      padding: 5px; 
-      margin-top: 7rem; 
-      margin: 0 10px; /* Añade márgenes a los lados */
-      background-color: #f9b774; /* Asegúrate de que el color de fondo se mantenga */
-      margin-top: 6rem;
-    } 
- 
-    .Texto-presentacion-curso h2 { 
-      font-size: 1.6rem; 
-      margin-top: 1rem; 
-    } 
- 
-    .Texto-presentacion-curso p { 
-      font-size: 0.9rem; 
-      text-align: justify; 
-      margin: 0 7px 0 7px;
-    } 
- 
-    .image-content img { 
-      width: 90%; 
-    } 
- 
-    .seccion-cursos { 
-      flex-direction: column; 
-      padding: 0 10px; 
-    } 
- 
-    .filtros-busqueda { 
-      width: 100%; 
-      margin-bottom: 10px; 
-    } 
- 
-    .cajas-cursos { 
-      grid-template-columns: 1fr; 
-      width: 100%; 
-    } 
- 
-    .caja-curso img { 
-      height: 120px; 
-    } 
- 
-    .boton-ver-mas { 
-      grid-column: span 1; 
-      width: 100%; 
-      margin-top: 20px; 
-    } 
- }
+.filtros-opciones input[type="checkbox"]:hover::before {
+    border-color: #ffa500;
+}
+
+.filtros-opciones input[type="checkbox"]:checked::before {
+    background-color: #ffa500; 
+    border-color: #ffa500;
+}
+
+.filtros-opciones input[type="checkbox"]:checked::after {
+    content: '✓'; 
+    position: absolute;
+    top: -2px; 
+    left: 2px;
+    font-size: 16px;
+    color: #ffffff; 
+    
+    pointer-events: none; 
+    
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.2s ease;
+}
+
+.filtros-opciones input[type="checkbox"]::after {
+    content: '✓';
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+/*APARTADO RESPONSIVE DE LOS CURSOS*/
+
+@media (max-width: 480px) {
+
+/* CLAVE 1: Selector Corregido y Contenedor de presentación apilado */
+.content-box { 
+    flex-direction: column !important;
+    padding: 20px !important; 
+    margin-top: 5rem !important; 
+    text-align: center; 
+    gap: 1rem; 
+}
+
+.Texto-presentacion-curso {
+    max-width: 100% !important; 
+    /* El orden 1 asegura que el texto vaya primero (arriba) */
+    order: 1; 
+    text-align: center;
+}
+
+.Texto-presentacion-curso h2 {
+    font-size: 1.8rem !important; 
+    margin-bottom: 10px !important;
+    margin-left: 0 !important; 
+}
+
+.Texto-presentacion-curso p {
+    max-width: 100% !important;
+    font-size: 1rem !important; 
+    line-height: 1.4;
+    text-align: center !important; 
+    margin: 0 auto 15px auto !important; 
+}
+
+.image-content {
+    /* CLAVE 2: Margen Corregido y Orden 2 para ir debajo */
+    max-width: 100% !important; /* Usamos 100% en lugar de 70% para mejor adaptabilidad */
+    order: 2; 
+    /* Se elimina el margen excesivo de 25rem. Con 0 ya está bien porque el párrafo tiene margen inferior */
+    margin-top: 0 !important; 
+}
+
+.image-content img {
+    width: 100%;
+    height: 200px !important; 
+    max-height: 50vh; 
+    object-fit: cover; 
+    max-width: 400px; 
+    margin: 0 auto; 
+}
+    
+    /* Sección de cursos: Apila filtros arriba, grid abajo */
+    .seccion-cursos {
+        flex-direction: column !important; /* Vertical total */
+        max-width: 100% !important; /* Usa todo el ancho */
+        padding: 0 10px !important; /* Padding lateral mínimo */
+        margin-top: 5rem !important;
+        margin-bottom: 5rem !important;
+        gap: 2rem; /* Espacio vertical entre filtros y grid */
+    }
+    
+    .filtros-busqueda {
+        width: 100% !important; /* Filtros ocupan todo */
+        margin-right: 0 !important; /* Sin margen lateral */
+        order: 1; /* Filtros primero */
+    }
+    
+    .barra-busqueda {
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .barra-busqueda input {
+        padding: 8px 15px !important; /* Padding más pequeño */
+        font-size: 1rem; /* Fuente touch-friendly */
+    }
+    
+    .filtros-opciones {
+        margin-bottom: 15px !important;
+    }
+    
+    .filtros-opciones h3 {
+        font-size: 1rem !important; /* Título más compacto */
+        margin-bottom: 8px !important;
+    }
+    
+    .filtros-opciones label {
+        margin-bottom: 8px !important;
+        font-size: 0.95rem; /* Etiquetas más pequeñas */
+    }
+    
+    .filtros-opciones a {
+        margin-top: 1rem !important;
+        padding: 6px 8px !important;
+        font-size: 0.95rem; /* Botón más compacto */
+        width: 100%; /* Ocupa todo para touch */
+        text-align: center;
+    }
+    
+    /* Grid de cursos: 1 columna para vertical */
+    .cajas-cursos {
+        width: 100% !important; /* Todo el ancho */
+        grid-template-columns: 1fr !important; /* Solo 1 columna */
+        gap: 15px !important; /* Gap reducido */
+        order: 2; /* Grid después de filtros */
+    }
+    
+    .caja-curso {
+        min-height: 280px !important; /* Altura más compacta */
+        width: 100% !important;
+    }
+    
+    .caja-curso:hover {
+        transform: scale(1.02) !important; /* Hover sutil en móvil */
+    }
+    
+    .caja-curso img {
+        height: 120px !important; /* Imagen más pequeña */
+    }
+    
+    .info-curso {
+        padding: 10px !important; /* Padding interno reducido */
+        min-height: 100px !important;
+    }
+    
+    .info-curso h4 {
+        font-size: 1.1rem !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .info-curso p {
+        font-size: 0.95rem !important;
+        line-height: 1.4;
+    }
+    
+    /* Checkbox: Ajustes para touch */
+    .filtros-opciones input[type="checkbox"] {
+        width: 20px !important;
+        height: 20px !important; /* Más grande para dedos */
+        margin-right: 10px !important;
+    }
+    
+    .filtros-opciones input[type="checkbox"]::after {
+        font-size: 18px !important; /* Check más visible */
+    }
+}
+  
+@media (min-width: 768px) {
+    
+    /* Sección Presentación */
+    .content-box {
+        flex-direction: row; /* Vuelve a la disposición horizontal */
+        margin-top: 10rem;
+    }
+
+    .Texto-presentacion-curso {
+        max-width: 50%; 
+        text-align: left;
+    }
+    
+    .Texto-presentacion-curso h2 {
+        font-size: 2.5rem; 
+    }
+
+    .Texto-presentacion-curso p {
+        text-align: justify;
+        padding: 0;
+    }
+
+    .image-content {
+        max-width: 45%;
+        order: 0; /* Vuelve al orden normal */
+    }
+    
+    .image-content img {
+        max-width: 100%;
+    }
+
+
+    /* Sección Cursos */
+    .seccion-cursos {
+        flex-direction: row; /* Filtros a la izquierda, Cursos a la derecha */
+        padding: 0 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .filtros-busqueda {
+        width: 30%; /* Más espacio para filtros */
+        margin-right: 20px;
+    }
+    
+    .cajas-cursos {
+        /* Cuadrícula de 2 columnas para tablet */
+        grid-template-columns: repeat(2, 1fr); 
+        width: 70%;
+    }
+    
+    .boton-ver-mas {
+        /* Ocupa 2 columnas en tablet */
+        grid-column: 1 / -1; 
+    }
+    
+    .caja-curso:hover {
+        transform: scale(1.05); /* Volver al hover más notorio */
+    }
+}
+
+/* --- DESKTOP (min-width: 1024px) --- */
+/* Reglas que se aplican cuando la pantalla es MÁS GRANDE que una tablet */
+@media (min-width: 1024px) {
+    
+    /* Sección Presentación */
+    .content-box {
+        padding: 40px;
+    }
+    
+    .Texto-presentacion-curso h2 {
+        font-size: 3rem; 
+    }
+
+    /* Sección Cursos */
+    .filtros-busqueda {
+        width: 25%; /* Vuelve al ancho original de desktop */
+    }
+    
+    .cajas-cursos {
+        /* Cuadrícula de 3 columnas para desktop */
+        grid-template-columns: repeat(3, 1fr); 
+        width: 75%; 
+    }
+    
+    .boton-ver-mas {
+        /* Ocupa 3 columnas en desktop */
+        grid-column: 1 / -1; 
+    }
+}
+
+/* ----- */
+
 
 /*APARTADO DEL CURSO DE ILUSTRACION CARTOON*/
 

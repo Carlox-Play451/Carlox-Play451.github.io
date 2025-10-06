@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     // === SELECTORES ===
     const filtrosOpciones = document.querySelector('.filtros-opciones');
-    const inputBusqueda = document.getElementById('inputBusqueda'); // Usamos el ID
+    const inputBusqueda = document.getElementById('inputBusqueda');
     const cursos = document.querySelectorAll('.caja-curso');
+    const contenedorCursos = document.getElementById('listaCursos');
     const botonLimpiar = document.getElementById('limpiarFiltros');
-    const botonVerMas = document.querySelector('.boton-ver-mas');
-    
-    // Configuración de paginación
-    const CURSOS_POR_DEFECTO = 6;
-    let cursosVisibles = CURSOS_POR_DEFECTO; 
     
     // === FUNCIÓN DE OPTIMIZACIÓN: DEBOUNCE ===
-    // Retrasa la ejecución de una función para que no se ejecute con demasiada frecuencia
     function debounce(func, delay = 300) {
         let timeoutId;
         return function(...args) {
@@ -22,10 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // === LÓGICA DE FILTRADO, BÚSQUEDA Y PAGINACIÓN ===
+    // === LÓGICA DE FILTRADO Y BÚSQUEDA ===
     function aplicarFiltros() {
         const filtrosActivos = {};
         const textoBusqueda = inputBusqueda.value.toLowerCase().trim();
+        let hayFiltroActivo = false;
 
         // 1. Recopilar filtros activos
         document.querySelectorAll('.filtros-opciones input[type="checkbox"]:checked').forEach(checkbox => {
@@ -36,12 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 filtrosActivos[grupo] = [];
             }
             filtrosActivos[grupo].push(valor);
+            hayFiltroActivo = true;
         });
         
-        const gruposFiltrados = Object.keys(filtrosActivos);
-        let cursosVisiblesEnTotal = 0; 
+        // Si no hay filtros activos ni texto de búsqueda, todos deberían ser visibles
+        if (Object.keys(filtrosActivos).length === 0 && textoBusqueda === '') {
+            // Mostrar todos y salir de la función
+            cursos.forEach(curso => curso.classList.remove('oculto'));
+            return;
+        }
 
-        // 2. Iterar sobre los cursos para determinar visibilidad
+        const gruposFiltrados = Object.keys(filtrosActivos);
+        const cursosVisibles = [];
+        const cursosOcultos = [];
+
+        // 2. Iterar sobre los cursos para determinar visibilidad y clasificarlos
         cursos.forEach((curso) => {
             let cumpleFiltros = true;
             
@@ -49,12 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const titulo = curso.querySelector('h4').textContent.toLowerCase();
             const descripcion = curso.querySelector('p')?.textContent.toLowerCase() || ''; 
             
-            // Si hay texto de búsqueda y el curso NO lo contiene, falla el filtro
             if (textoBusqueda !== '' && !titulo.includes(textoBusqueda) && !descripcion.includes(textoBusqueda)) {
                 cumpleFiltros = false;
             }
 
-            // --- Criterio B: Filtrado por Checkboxes (solo si pasó la búsqueda) ---
+            // --- Criterio B: Filtrado por Checkboxes ---
             if (cumpleFiltros) {
                 for (const grupo of gruposFiltrados) {
                     const filtrosDelGrupo = filtrosActivos[grupo]; 
@@ -76,44 +80,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // --- Criterio C: Paginación ---
+            // --- Clasificación ---
             if (cumpleFiltros) {
-                cursosVisiblesEnTotal++; 
-                
-                if (cursosVisiblesEnTotal <= cursosVisibles) {
-                    curso.classList.remove('oculto');
-                } else {
-                    curso.classList.add('oculto');
-                }
+                cursosVisibles.push(curso);
             } else {
-                // Si falla cualquier filtro o búsqueda, el curso se oculta
-                curso.classList.add('oculto');
+                cursosOcultos.push(curso);
             }
         });
+        
+        // 3. LÓGICA DE MOVIMIENTO AL FRENTE (EL CAMBIO SOLICITADO)
+        
+        // Mover los cursos visibles al principio y mostrar (se insertan en orden inverso al forEach)
+        // Usamos .forEach en inverso o insertBefore para mantener el orden, pero .prepend funciona bien para mover al frente.
+        cursosVisibles.reverse().forEach(curso => {
+            // 1. Mover al principio del contenedor (lo que estaba al final ahora va primero)
+            contenedorCursos.prepend(curso); 
+            // 2. Mostrar la tarjeta
+            curso.classList.remove('oculto');
+        });
 
-        // 3. Actualizar botón "Ver Más"
-        if (cursosVisiblesEnTotal > cursosVisibles) {
-            botonVerMas.style.display = 'block';
-        } else {
-            botonVerMas.style.display = 'none';
-        }
+        // Asegurar que los cursos ocultos se mantengan al final y ocultos
+        cursosOcultos.forEach(curso => {
+            // 1. Ocultar la tarjeta
+            curso.classList.add('oculto');
+            // 2. Mover al final (mantiene el DOM limpio, ya que ocupan 0 espacio)
+            contenedorCursos.appendChild(curso); 
+        });
     }
 
-    // === LISTENERS (CON DEBOUNCE PARA LA BÚSQUEDA) ===
+    // === LISTENERS ===
 
     // 1. Delegado de Eventos para Checkboxes
     filtrosOpciones.addEventListener('change', (e) => {
         if (e.target.type === 'checkbox') {
-            cursosVisibles = CURSOS_POR_DEFECTO; // Resetear la paginación
             aplicarFiltros();
         }
     });
     
-    // 2. Búsqueda Instantánea con Debounce (Optimizado)
-    const debouncedFiltros = debounce(() => {
-        cursosVisibles = CURSOS_POR_DEFECTO;
-        aplicarFiltros();
-    }, 300); // 300ms de retraso
+    // 2. Búsqueda Instantánea con Debounce
+    const debouncedFiltros = debounce(aplicarFiltros, 300); 
 
     inputBusqueda.addEventListener('input', debouncedFiltros);
     
@@ -123,17 +128,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.filtros-opciones input[type="checkbox"]').forEach(checkbox => {
             checkbox.checked = false;
         });
-        inputBusqueda.value = ''; // Limpiar el campo de búsqueda
-        cursosVisibles = CURSOS_POR_DEFECTO;
-        aplicarFiltros();
+        inputBusqueda.value = ''; 
+        aplicarFiltros(); // Vuelve a mostrar todos
     });
     
-    // 4. Botón "Ver Más"
-    botonVerMas.addEventListener('click', () => {
-        cursosVisibles += CURSOS_POR_DEFECTO; 
-        aplicarFiltros(); 
-    });
-
-    // Inicializar
+    // Inicializar: Asegura que el estado inicial (todos visibles) se muestre correctamente
     aplicarFiltros();
 });
