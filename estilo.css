@@ -263,7 +263,7 @@ body {
 }
 
 .Ilustracion-digital-contenedor h2 {
-  margin-left: 40rem;
+  margin-left: 46rem;
   font-size: 36px;
   margin-bottom: 20px;
   margin-right: 30px;
@@ -274,7 +274,7 @@ body {
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
-  margin-right: 15rem;
+  margin-right: 20rem;
 }
 
 /* Estilos para la imagen a la izquierda */
@@ -1445,6 +1445,27 @@ body {
   line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
 }
 
+.introduccion-texto-4 h2{
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.introduccion-texto-4 p{
+  color: black;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.introduccion-texto-4 ul li{
+  color: black;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem ;
+  line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+}
+
 /*EL APARTADO DE LOS VIDEOS DEL CURSO*/
 
 .video-grid {
@@ -1479,14 +1500,15 @@ body {
   font-size: bold;
 }
 
-.ver-mas {
+.LECCIONES {
   display: block;
   margin: 20px auto;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   text-decoration: none;
   margin-top: 2rem;
+  font-weight: bold;
 }
 
 .ver-mas:hover {
@@ -1675,105 +1697,141 @@ body {
 /* Estilos para dispositivos móviles (hasta 480px) */
 @media (max-width: 480px) {
   .content-wrapper {
-    flex-direction: column;
-    padding: 10px;
-  }
+        flex-direction: column;
+        /* Padding reducido y horizontalmente seguro */
+        padding: 10px; 
+    }
 
-  .titulo-principal-curso h1{
-    font-size: 30px;
-  }
+    .titulo-principal-curso h1 {
+        font-size: 30px;
+    }
 
-  .titulo-principal-curso p{
-    font-size: 18px;
-  }
+    .titulo-principal-curso p {
+        font-size: 18px;
+    }
 
-  .video-placeholder{
-    width: 400px;
-    margin-right: -5px;  
-  }
+    /* CLAVE DE CORRECCIÓN: Usar ancho relativo (100%) y eliminar margen negativo */
+    .video-placeholder {
+        width: 100%; /* El ancho es 100% del contenedor padre */
+        margin-right: 0; /* Eliminamos el margen negativo */
+        max-width: 100%; /* Seguridad extra */
+        height: auto; /* Dejar que la altura se ajuste proporcionalmente */
+        margin-left: 1rem;
+    }
 
-  .introduccion-texto-1,
-  .introduccion-texto-2{
-    width: 100%;
-    padding: 10px;
-    margin-left: 0;
-    font-size: 16px; /* Ajusta el tamaño de fuente para mejor legibilidad */
-    line-height: 1.6;
-  }
+    /* --- TEXTOS INTRODUCTORIOS (Asegurar que no haya desbordamiento) --- */
+    .introduccion-texto-1,
+    .introduccion-texto-2,
+    .introduccion-texto-3 {
+        width: 100%;
+        padding: 10px;
+        margin-left: 0;
+        font-size: 16px; 
+        line-height: 1.6;
+    }
+    
+    /* Revisión y limpieza de márgenes excesivos */
+    .introduccion-texto-1 {
+        /* Margin reducido: 27rem es excesivo y puede estar creando espacios vacíos */
+        margin-bottom: 2rem; 
+    }
 
-  .introduccion-texto-1{
-    margin-bottom: 27rem;
-  }
+    .introduccion-texto-1 p {
+        /* Margin reducido: 8rem es excesivo */
+        margin-bottom: 1rem; 
+    }
 
-  .introduccion-texto-1 p{
-    margin-bottom: 8rem;
-  }
+    .introduccion-texto-1 h2{
+        font-size: 1.6rem; 
+        margin-top: 2rem;
+    }
 
-  .introduccion-texto-3 {
-    width: 100%;
-    padding: 10px;
-    margin-left: 0;
-    font-size: 16px; /* Ajusta el tamaño de fuente para mejor legibilidad */
-    line-height: 1.6;
-  }
+    .introduccion-texto-2 h2{
+      font-size: 1.6rem;
+      margin-top: 23.2rem;
+    }
 
-  .introduccion-texto-1 h2,
-  .introduccion-texto-2 h2,
-  .introduccion-texto-3 h2 {
-    font-size: 1.6rem; /* Ajusta el tamaño del encabezado */
-    margin-top: 2rem;
-  }
+    .introduccion-texto-3 h2{
+        font-size: 1.6rem; 
+    }
 
-  .video-grid {
-    grid-template-columns: 1fr; /* Una columna */
-    gap: 15px; /* Espacio entre los videos */
-    padding: 0;
-  }
+    .introduccion-texto-4 h2{
+        font-size: 1.6rem;
+        margin-top: 2rem;
+    }
 
-  .video-item {
-    text-align: center;
-    color: black;
-    margin-bottom: 20px; /* Espacio inferior para separar los elementos */
-  }
+    .introduccion-texto-4 p{
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        margin-top: 5px;
+    }
 
-  .imagen-recuadros {
-    grid-template-columns: 1fr; /* Una columna */
-    gap: 10px;
-  }
+    .introduccion-texto-4 ul li{
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        margin-left: 5px;
+        margin-bottom: 1rem;
+    }
 
-  .imagen-referencia {
-    width: 100%;
-    height: auto;
-  }
+    /* --- GRID DE VIDEOS Y REFERENCIAS --- */
+    .video-grid {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        padding: 0 10px; /* Padding horizontal seguro */
+    }
 
-  .imagen-presentacion {
-    width: 100%;
-    height: auto;
-  }
+    .video-item {
+        text-align: center;
+        color: black;
+        margin-bottom: 20px; 
+    }
 
-  .contenidos-estructurados {
-    padding: 10px;
-    margin: 10px 0;
-    margin-top: 1.5rem;
-  }
+    .video-item p{
+        font-size: 1rem;
+        font-weight: 500;
+    }
 
-  .unidad ul {
-    width: 100%;
-    padding-left: 0;
-  }
+    .imagen-recuadros {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+        padding: 0 10px; /* Padding horizontal seguro */
+    }
 
-  .unidad-header h3 {
-    font-size: 1.2rem;
-  }
+    .imagen-referencia,
+    .imagen-presentacion {
+        width: 100%;
+        height: auto;
+    }
 
-  .unidad ul li {
-    font-size: 1rem;
-  }
+    .ver-mas {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    /* --- CONTENIDOS ESTRUCTURADOS --- */
+    .contenidos-estructurados {
+        padding: 10px;
+        margin: 10px 0;
+        margin-top: 1.5rem;
+    }
 
-  .ver-mas {
-    font-size: 14px;
-    margin-top: 10px;
-  }
+    .unidad ul {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .unidad-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .unidad ul li {
+        font-size: 1rem;
+        margin-left: 1.2rem;
+    }
+
+    .ver-mas {
+        font-size: 14px;
+        margin-top: 10px;
+    }
 }
 
 @media (max-width: 320px) {
