@@ -34,7 +34,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 9999;
   }
   
   .header::before {
@@ -119,6 +119,7 @@ body {
     color: #fff;
     cursor: pointer;
     display: none;
+    z-index: 99999;
   }
   
   /* Responsive Adjustments */
@@ -2819,76 +2820,134 @@ body {
   width: 48%; /* Para asegurar que el enlace tenga el mismo tamaño que el botón */
 }
 
-/* Media Query para pantallas de 1024px */
+/* --- RESPONSIVE: Pantallas de 1024px y menos (Tablets y Portátiles Pequeños) --- */
 @media (max-width: 1024px) {
-  .Curso-contenedor-principal {
-    flex-direction: column; /* Cambiar la dirección de flex para apilar los elementos */
-    padding: 15px;
-  }
+    /* CLAVE: FUERZA EL APILAMIENTO. Esto hace que el índice se coloque debajo de la ilustración. */
+    .Curso-contenedor-principal {
+        flex-direction: column; 
+        padding: 20px;
+    }
 
-  .curso-ilustracion {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
-  }
+    /* CONTENIDO PRINCIPAL: Ocupa todo el ancho */
+    .curso-ilustracion {
+        width: 100%;
+        margin-right: 0;
+    }
 
-  .curso-ilustracion h1 {
-    font-size: 28px;
-  }
+    /* SIDEBAR (Índice del curso) al final del contenido */
+    .curso-indice {
+        /* Ocupa todo el ancho disponible */
+        width: 100%; 
+        /* Quitar el comportamiento "sticky" que no es deseado cuando se apila */
+        position: relative; 
+        top: auto;
+        margin-top: 40px;
+        /* Aseguramos que se muestre antes de los botones, siguiendo el flujo de columna */
+    }
+    
+    /* CORRECCIÓN SCROLL: Eliminamos el margen horizontal de las galerías */
+    .imagen-unidad-apartado {
+        margin: 0; 
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    }
 
-  .Unidad-temas h3 {
-    font-size: 22px;
-  }
-
-  .Unidad-temas p, .Unidad-temas li {
-    font-size: 16px;
-  }
-
-  .imagenes-de-unidades img {
-    width: 100%; /* Las imágenes se ajustan al 100% del ancho */
-  }
-
-  .botones-container {
-    flex-direction: column; /* Los botones se alinean verticalmente */
-    align-items: center;
-  }
-
-  .boton {
-    width: 100%; /* Los botones ocupan todo el ancho disponible */
-    margin-bottom: 10px; /* Añadir espacio entre los botones */
-  }
+    .imagen-unidad-apartado .imagenes-unidades:nth-child(1),
+    .imagen-unidad-apartado .imagenes-unidades:nth-child(2) {
+        transform: scale(1.1); /* Escalar menos, para no desbordar */
+    }
+    
+    .imagen-galeria-unidad {
+        margin: 0; /* CORRECCIÓN SCROLL */
+    }
 }
 
-/* Media Query para pantallas de 768px */
+/* Solo para 768px: un ajuste de tamaño de fuente un poco más pequeño */
 @media (max-width: 768px) {
-  .Curso-contenedor-principal {
-    padding: 10px;
-  }
+    .curso-ilustracion h1 {
+        font-size: 30px;
+    }
+    
+    .Unidad-temas h3 {
+        font-size: 24px;
+    }
+}
 
-  .curso-ilustracion h1 {
-    font-size: 24px;
-  }
 
-  .Unidad-temas h3 {
-    font-size: 20px;
-  }
+/* --- RESPONSIVE: Pantallas de 480px (Móviles Smartphone) --- */
+@media (max-width: 480px) {
+    /* CONTENEDOR: Ya está en columna por la regla de 1024px */
+    .Curso-contenedor-principal {
+        padding: 10px; /* Reducción de padding para móviles */
+    }
 
-  .Unidad-temas p, .Unidad-temas li {
-    font-size: 15px;
-  }
+    /* EL ÍNDICE YA ESTÁ AL FINAL DEL CONTENIDO GRACIAS A flex-direction: column */
+    .curso-indice {
+        padding: 15px; /* Ajustamos padding para móvil */
+        margin-top: 30px;
+    }
 
-  .imagenes-de-unidades img {
-    width: 100%;
-    margin-bottom: 20px;
-  }
+    .curso-ilustracion h1 {
+        font-size: 24px;
+    }
+    
+    /* IMÁGENES: Apilamiento y Limpieza de Scroll */
+    .imagenes-de-unidades {
+        flex-direction: column; 
+    }
 
-  .botones-container {
-    max-width: 500px; /* Limitar el tamaño máximo de los botones */
-  }
+    .imagenes-de-unidades img {
+        width: 100%;
+        height: 250px;
+    }
+    
+    /* CORRECCIÓN SCROLL: Eliminar margen y forzar una columna */
+    .imagen-unidad-apartado {
+        grid-template-columns: 1fr; 
+        margin: 0; 
+    }
+    
+    /* Restaurar el tamaño y el posicionamiento de las imágenes de grid */
+    .imagen-unidad-apartado .imagenes-unidades:nth-child(1),
+    .imagen-unidad-apartado .imagenes-unidades:nth-child(2) {
+        transform: scale(1); 
+    }
+    .imagen-unidad-apartado .imagenes-unidades:nth-child(3) {
+        grid-column: span 1; 
+        justify-self: initial; 
+    }
+    
+    .imagen-galeria-unidad {
+        grid-template-columns: 1fr; 
+        margin: 0;
+    }
+    
+    .imagenes-unidades-galeria img {
+        width: 100%; 
+        height: auto;
+    }
 
-  .boton {
-    padding: 12px 20px;
-  }
+    .imagen-unidad-apartado img{
+      width: 100%;
+      height: 250px
+    }
+
+    /* BOTONES: Asegurar que se apilen correctamente */
+    .botones-container {
+        flex-direction: column;
+    }
+    
+    .boton, .boton-link {
+        width: 100%;
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+    
+    /* Aseguramos que el botón del menú de navegación (si existe) se muestre */
+    /* *** REEMPLAZA .menu-boton CON LA CLASE REAL DE TU BOTÓN DE HEADER *** */
+    .menu-boton { 
+        display: block !important; 
+        z-index: 1001; 
+    }
 }
 
 /* Estilos generales para pantallas grandes */
@@ -3170,6 +3229,10 @@ body {
   line-height: 1.6;
 }
 
+.texto-descripcion p {
+  margin-top: 2rem;
+}
+
 /* Estilo para las imágenes a los costados */
 .about-us .imagen-izquierda, .about-us .imagen-derecha {
   width: 70%;  /* 45% para que ambas imágenes ocupen un buen espacio */
@@ -3185,9 +3248,9 @@ body {
 .vision, .mission {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f1f1f128;
+  background-color: #cecece6b;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.363);
   margin-top: 40px;
 }
 
